@@ -2,6 +2,8 @@
 
 Prompt Skill Generator is a Dify plugin for running reusable prompt skills. It supports built-in templates, pasted custom skill content, uploaded Skill ZIP packages, persistent registered Skill presets, and attachment-aware execution with text files, images, and documents.
 
+Read this in Chinese: [简体中文](README.zh-Hans.md)
+
 ## Features
 
 - Execute a selected skill directly, returning the final content.
@@ -26,7 +28,7 @@ Runs a built-in, custom, uploaded, or registered skill without requiring attachm
 
 ### Generate Prompt With Attachments
 
-Runs a skill with attachments or base64 image input. Use `附件 1` through `附件 5` for uploaded files. Existing workflows that already contain `attachment_6` through `attachment_10` remain readable by the backend. Supported input types include:
+Runs a skill with attachments or base64 image input. Use `Attachment 1` through `Attachment 5` for uploaded files. Existing workflows that already contain `attachment_6` through `attachment_10` remain readable by the backend. Supported input types include:
 
 - text files
 - one or more images
