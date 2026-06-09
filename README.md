@@ -100,6 +100,8 @@ Install dependencies:
 pip install -r requirements-dev.txt
 ```
 
+`requirements-dev.txt` installs test dependencies from the Python package index. `requirements.txt` is reserved for Dify runtime packaging and expects a local `wheels/` directory.
+
 Run tests:
 
 ```bash

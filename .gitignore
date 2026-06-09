@@ -1,4 +1,5 @@
 .env
+.ci-test-venv/
 .venv/
 venv/
 __pycache__/

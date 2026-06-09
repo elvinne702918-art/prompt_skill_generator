@@ -1,6 +1,6 @@
 # Project Progress
 
-Last updated: 2026-06-09 09:42:44 +08:00
+Last updated: 2026-06-09 09:51:18 +08:00
 
 ## Project
 
@@ -24,6 +24,7 @@ Last updated: 2026-06-09 09:42:44 +08:00
 | Local package artifact | Done | Existing package: `D:\dify-main\prompt_skill_generator.difypkg`, 11,439,041 bytes, last modified 2026-05-22 16:14:40. |
 | Local Git commit | Done | Lightweight GitHub source history is active on `main`; existing full-wheelhouse history is backed up at `local/full-wheelhouse-backup`. |
 | GitHub push | Done | Source repository pushed to `https://github.com/elvinne702918-art/prompt_skill_generator` at commit `1943ec3`. Wheel files are excluded from source history and should be distributed through the `.difypkg` release artifact. |
+| GitHub Actions | Fixed locally | CI dependency installation was failing because `requirements-dev.txt` included offline-only `requirements.txt`; dev dependencies now install from the Python package index while runtime packaging keeps the wheelhouse path. |
 | GitHub Release | Not started | Needs successful push first, then create release such as `v0.1.23` and upload `.difypkg`. |
 | Dify local install test | Not confirmed | Needs uploading `.difypkg` through Dify plugin local-file install flow. |
 | Dify Marketplace submission | Not started | Requires trusted Marketplace submission flow after GitHub/release validation. |
@@ -32,6 +33,7 @@ Last updated: 2026-06-09 09:42:44 +08:00
 
 - `python -m pytest -q`: passed, `44 passed`, with 2 dependency warnings.
 - `python -m compileall -q main.py provider tools tests`: passed.
+- Fresh virtual environment CI simulation: `pip install -r requirements-dev.txt` passed, then `python -m unittest tests.test_generate_prompt` passed with 44 tests.
 - YAML spot check: `manifest.yaml`, provider YAML, and tool YAMLs parse/read with normal Chinese text.
 - GitHub remote check: `refs/heads/main` points to `1943ec32bdf46a4372e4882241136432cf55bfd6`.
 - GitHub repository page check: `https://github.com/elvinne702918-art/prompt_skill_generator` returns HTTP 200.
