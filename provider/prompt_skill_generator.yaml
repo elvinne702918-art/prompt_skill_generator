@@ -1,0 +1,19 @@
+identity:
+  author: elvinnne
+  name: prompt_skill_generator
+  label:
+    en_US: Prompt Skill Generator
+    zh_Hans: 提示词技能生成器
+  description:
+    en_US: Generate or execute prompts with reusable Skill templates.
+    zh_Hans: 使用可复用 Skill 模板生成提示词或直接执行 Skill。
+  icon: icon.png
+
+tools:
+  - tools/register_skill_package/register_skill_package.yaml
+  - tools/generate_prompt/generate_prompt.yaml
+  - tools/generate_prompt_with_attachments/generate_prompt_with_attachments.yaml
+
+extra:
+  python:
+    source: provider/prompt_skill_generator.py

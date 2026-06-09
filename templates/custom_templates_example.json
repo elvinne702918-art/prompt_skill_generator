@@ -1,0 +1,29 @@
+{
+  "my_translate": {
+    "id": "my_translate",
+    "name": { "en_US": "My Translation", "zh_Hans": "我的翻译" },
+    "description": { "en_US": "Custom translation template", "zh_Hans": "自定义翻译模板" },
+    "skill": "你是一位专业翻译。根据用户提供的文本和需求，生成一个翻译提示词。要求：保持原文含义、语气和风格，处理文化差异，确保目标语言自然流畅。"
+  },
+
+  "my_email": {
+    "id": "my_email",
+    "name": { "en_US": "Email Writer", "zh_Hans": "邮件撰写" },
+    "description": { "en_US": "Generate professional emails", "zh_Hans": "生成专业邮件" },
+    "skill": "你是一位商务邮件撰写专家。根据用户描述的场景和需求，生成一个邮件撰写提示词。要求：语气得体、结构清晰、重点突出、符合商务礼仪。"
+  },
+
+  "my_code_gen": {
+    "id": "my_code_gen",
+    "name": { "en_US": "Code Generator", "zh_Hans": "代码生成" },
+    "description": { "en_US": "Generate code from requirements", "zh_Hans": "根据需求生成代码" },
+    "skill": "你是一位资深开发工程师。根据用户描述的需求，生成一个代码编写提示词。要求：代码简洁可读、有类型注解、有错误处理、遵循最佳实践。"
+  },
+
+  "my_analysis": {
+    "id": "my_analysis",
+    "name": { "en_US": "Business Analysis", "zh_Hans": "商业分析" },
+    "description": { "en_US": "Analyze business data", "zh_Hans": "分析商业数据" },
+    "skill": "你是一位商业分析师。根据用户提供的数据或分析需求，生成一个商业分析提示词。要求：用数据说话，给出可执行建议，区分相关性和因果性。"
+  }
+}

@@ -1,0 +1,4 @@
+--no-index
+--find-links ./wheels
+dify_plugin==0.5.1
+httpx==0.28.1

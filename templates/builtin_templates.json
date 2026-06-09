@@ -1,0 +1,32 @@
+{
+  "translate": {
+    "id": "translate",
+    "name": { "en_US": "Translation", "zh_Hans": "翻译" },
+    "description": { "en_US": "Translate text to a target language", "zh_Hans": "将文本翻译为目标语言" },
+    "skill": "翻译任务规则：1.确定源语言和目标语言 2.保持原文含义和语气 3.处理文化差异和习语 4.确保目标语言自然流畅 5.专业术语保持一致"
+  },
+  "summarize": {
+    "id": "summarize",
+    "name": { "en_US": "Summarization", "zh_Hans": "总结" },
+    "description": { "en_US": "Create a concise summary of the content", "zh_Hans": "创建内容的简洁总结" },
+    "skill": "总结任务规则：1.提取核心论点和关键信息 2.去除冗余和重复内容 3.保持逻辑结构清晰 4.根据原文长度调整总结详细程度 5.保留重要数据和结论"
+  },
+  "code_review": {
+    "id": "code_review",
+    "name": { "en_US": "Code Review", "zh_Hans": "代码审查" },
+    "description": { "en_US": "Review code for quality, bugs, and improvements", "zh_Hans": "审查代码质量、Bug 和改进点" },
+    "skill": "代码审查规则：1.检查逻辑错误和Bug 2.评估安全漏洞风险 3.分析性能瓶颈 4.检查代码风格和可读性 5.按严重程度分级（严重/警告/建议）6.提供具体修复方案"
+  },
+  "writing_assistant": {
+    "id": "writing_assistant",
+    "name": { "en_US": "Writing Assistant", "zh_Hans": "写作助手" },
+    "description": { "en_US": "Help improve and refine written content", "zh_Hans": "帮助改进和完善书面内容" },
+    "skill": "写作改进规则：1.提升表达清晰度 2.修正语法和标点 3.统一语气和风格 4.优化段落结构和逻辑 5.保留作者原意 6.给出修改前后对比"
+  },
+  "data_analysis": {
+    "id": "data_analysis",
+    "name": { "en_US": "Data Analysis", "zh_Hans": "数据分析" },
+    "description": { "en_US": "Analyze data and provide insights", "zh_Hans": "分析数据并提供洞察" },
+    "skill": "数据分析规则：1.识别关键趋势和模式 2.发现异常值和离群点 3.用具体数据支撑结论 4.区分相关性和因果性 5.给出可执行的建议 6.说明数据局限性"
+  }
+}

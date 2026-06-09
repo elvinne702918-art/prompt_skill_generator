@@ -1,0 +1,256 @@
+identity:
+  name: generate_prompt_with_attachments
+  author: elvinnne
+  label:
+    en_US: Execute Skill With Attachments
+    zh_Hans: 带附件执行 Skill
+description:
+  human:
+    en_US: Execute a selected skill with text files, images, and documents.
+    zh_Hans: 使用文本文件、图片或文档作为附件执行选中的 Skill。
+  llm: 使用文本文件、图片或文档作为附件执行选中的 Skill。
+
+parameters:
+  - name: context
+    type: string
+    label:
+      en_US: User Context
+      zh_Hans: 用户输入
+    human_description:
+      en_US: Describe the task, request, or prompt input for the selected skill.
+      zh_Hans: 填写任务要求、用户需求或需要交给 Skill 处理的输入内容。
+    required: true
+    form: llm
+
+  - name: attachment_1
+    type: file
+    label:
+      en_US: Attachment 1
+      zh_Hans: 附件 1
+    human_description:
+      en_US: Optional if Base64 Images is provided. Upload a text file, image, or document.
+      zh_Hans: 可选。上传文本文件、图片或文档；如果已填写 Base64 图片，可不传。
+    required: false
+    form: llm
+
+  - name: attachment_2
+    type: file
+    label:
+      en_US: Attachment 2
+      zh_Hans: 附件 2
+    human_description:
+      en_US: Optional additional text file, image, or document.
+      zh_Hans: 可选。额外上传文本文件、图片或文档。
+    required: false
+    form: llm
+
+  - name: attachment_3
+    type: file
+    label:
+      en_US: Attachment 3
+      zh_Hans: 附件 3
+    human_description:
+      en_US: Optional additional text file, image, or document.
+      zh_Hans: 可选。额外上传文本文件、图片或文档。
+    required: false
+    form: llm
+
+  - name: attachment_4
+    type: file
+    label:
+      en_US: Attachment 4
+      zh_Hans: 附件 4
+    human_description:
+      en_US: Optional additional text file, image, or document.
+      zh_Hans: 可选。额外上传文本文件、图片或文档。
+    required: false
+    form: llm
+
+  - name: attachment_5
+    type: file
+    label:
+      en_US: Attachment 5
+      zh_Hans: 附件 5
+    human_description:
+      en_US: Optional additional text file, image, or document.
+      zh_Hans: 可选。额外上传文本文件、图片或文档。
+    required: false
+    form: llm
+
+  - name: base64_images
+    type: string
+    label:
+      en_US: Base64 Images (Optional)
+      zh_Hans: Base64 图片（可选）
+    human_description:
+      en_US: Optional. Paste one image data URL or raw base64 image per line. JSON arrays with filename, mime_type, and base64 are also supported. Used for Gemini inline_data image input.
+      zh_Hans: 可选。每行粘贴一张图片的 data URL 或原始 base64；也支持包含 filename、mime_type、base64 的 JSON 数组。Gemini 图片输入可用这个字段。
+    required: false
+    form: llm
+
+  - name: template
+    type: select
+    label:
+      en_US: Built-in Skill Template
+      zh_Hans: 内置 Skill 模板
+    human_description:
+      en_US: Select a built-in skill. Use Registered Skill ID to run a stored preset.
+      zh_Hans: 选择内置 Skill；如需使用已注册 Skill，请填写已注册 Skill ID。
+    options:
+      - value: translate
+        label:
+          en_US: Translation
+          zh_Hans: 翻译
+      - value: summarize
+        label:
+          en_US: Summarization
+          zh_Hans: 总结
+      - value: code_review
+        label:
+          en_US: Code Review
+          zh_Hans: 代码审查
+      - value: writing_assistant
+        label:
+          en_US: Writing Assistant
+          zh_Hans: 写作助手
+      - value: data_analysis
+        label:
+          en_US: Data Analysis
+          zh_Hans: 数据分析
+      - value: custom
+        label:
+          en_US: Custom
+          zh_Hans: 自定义
+    required: false
+    form: form
+
+  - name: registered_skill_id
+    type: string
+    label:
+      en_US: Registered Skill ID
+      zh_Hans: 已注册 Skill ID
+    human_description:
+      en_US: Optional. Paste the ID returned by the Register Skill Package node.
+      zh_Hans: 可选。粘贴“注册 Skill 包”节点返回的 ID。
+    required: false
+    form: form
+
+  - name: custom_template
+    type: string
+    label:
+      en_US: Custom Skill Content
+      zh_Hans: 自定义 Skill 内容
+    human_description:
+      en_US: Optional. Paste plain instructions, SKILL.md content with frontmatter, or a JSON skill object. Supplemental text is appended to registered skills.
+      zh_Hans: 可选。粘贴普通指令、带 frontmatter 的 SKILL.md，或 JSON Skill 对象。使用已注册 Skill 时，这里会作为补充指令追加。
+    required: false
+    form: llm
+
+  - name: output_mode
+    type: select
+    label:
+      en_US: Output Mode
+      zh_Hans: 输出模式
+    human_description:
+      en_US: Generate a reusable prompt, or execute the selected skill directly and return the final content.
+      zh_Hans: 生成可复用提示词，或直接执行选中的 Skill 并返回最终内容。
+    options:
+      - value: execute_skill
+        label:
+          en_US: Execute Skill
+          zh_Hans: 执行 Skill
+      - value: generate_prompt
+        label:
+          en_US: Generate Prompt
+          zh_Hans: 生成提示词
+    required: false
+    form: form
+
+  - name: reasoning_content
+    type: select
+    label:
+      en_US: Reasoning Content
+      zh_Hans: 思考内容
+    human_description:
+      en_US: Hide common reasoning tags such as <think> by default, or return the model output as-is.
+      zh_Hans: 默认隐藏 <think> 等常见思考标签，也可以返回模型原始输出。
+    options:
+      - value: hide
+        label:
+          en_US: Hide
+          zh_Hans: 隐藏
+      - value: show
+        label:
+          en_US: Show Raw
+          zh_Hans: 显示原始内容
+    required: false
+    form: form
+
+  - name: model
+    type: model-selector
+    scope: llm
+    required: true
+    label:
+      en_US: LLM Model
+      zh_Hans: LLM 模型
+    human_description:
+      en_US: Select the LLM model to use.
+      zh_Hans: 选择要调用的 LLM 模型。
+    form: form
+
+  - name: external_api_type
+    type: select
+    label:
+      en_US: External API Type
+      zh_Hans: 外部 API 类型
+    human_description:
+      en_US: Select the external model API format. Only used when External API Key is provided.
+      zh_Hans: 选择外部模型 API 格式。仅在填写外部 API Key 时生效。
+    options:
+      - value: openai_compatible
+        label:
+          en_US: OpenAI Compatible
+          zh_Hans: OpenAI 兼容
+      - value: google_gemini
+        label:
+          en_US: Google Gemini
+          zh_Hans: Google Gemini
+    required: false
+    form: form
+
+  - name: api_key
+    type: secret-input
+    label:
+      en_US: External API Key (Optional)
+      zh_Hans: 外部 API Key（可选）
+    human_description:
+      en_US: Optional. Provide an API key for external LLM. If not provided, uses the Dify platform model selected above.
+      zh_Hans: 可选。填写外部 LLM 的 API Key；不填则使用上方选择的 Dify 平台模型。
+    required: false
+    form: form
+
+  - name: external_model
+    type: string
+    label:
+      en_US: External Model Name (Optional)
+      zh_Hans: 外部模型名称（可选）
+    human_description:
+      en_US: Optional. Override the selected Dify model name for external API calls, for example gemini-1.5-pro.
+      zh_Hans: 可选。覆盖外部 API 实际调用的模型名，例如 gemini-1.5-pro。
+    required: false
+    form: form
+
+  - name: api_base
+    type: string
+    label:
+      en_US: External API Base URL (Optional)
+      zh_Hans: 外部 API Base URL（可选）
+    human_description:
+      en_US: Optional. Base URL for external API, for example https://api.openai.com/v1 or https://generativelanguage.googleapis.com/v1beta. Only needed when using External API Key.
+      zh_Hans: 可选。外部 API 的 Base URL，例如 https://api.openai.com/v1 或 https://generativelanguage.googleapis.com/v1beta。仅在使用外部 API Key 时需要。
+    required: false
+    form: form
+
+extra:
+  python:
+    source: tools/generate_prompt_with_attachments/generate_prompt_with_attachments.py

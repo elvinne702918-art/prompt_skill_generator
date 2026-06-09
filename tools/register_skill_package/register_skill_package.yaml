@@ -1,0 +1,83 @@
+identity:
+  name: register_skill_package
+  author: elvinnne
+  label:
+    en_US: Skill Manager
+    zh_Hans: Skill 管理
+description:
+  human:
+    en_US: Register a Skill ZIP package, list installed Skills, or delete an installed Skill preset.
+    zh_Hans: 注册 Skill ZIP 包、查询已安装 Skill，或删除已安装 Skill 预设。
+  llm: 注册 Skill ZIP 包、查询已安装 Skill，或删除已安装 Skill 预设。
+parameters:
+  - name: operation
+    type: select
+    label:
+      en_US: Operation
+      zh_Hans: 操作类型
+    human_description:
+      en_US: Choose whether to register, list, or delete persistent Skill presets.
+      zh_Hans: 选择注册、查询或删除持久化 Skill 预设。
+    options:
+      - value: register
+        label:
+          en_US: Register Skill Package
+          zh_Hans: 注册 Skill 包
+      - value: list
+        label:
+          en_US: List Installed Skills
+          zh_Hans: 查询已安装 Skill
+      - value: delete
+        label:
+          en_US: Delete Installed Skill
+          zh_Hans: 删除已安装 Skill
+    required: false
+    form: form
+
+  - name: skill_package
+    type: file
+    label:
+      en_US: Skill ZIP Package
+      zh_Hans: Skill ZIP 包
+    human_description:
+      en_US: Required only when operation is Register. Upload one ZIP file containing SKILL.md and optional references/ text files.
+      zh_Hans: 仅注册时必填。上传一个包含 SKILL.md 的 ZIP 文件，可包含 references/ 文本资料。
+    required: false
+    form: llm
+
+  - name: skill_id
+    type: string
+    label:
+      en_US: Skill ID
+      zh_Hans: Skill ID
+    human_description:
+      en_US: "Required only when operation is Delete. You can paste the id returned by registration or the registered: prefixed value from the execution node."
+      zh_Hans: "仅删除时必填。可填写注册返回的 id，也可填写执行节点中的 registered: 前缀值。"
+    required: false
+    form: form
+
+  - name: skill_name
+    type: string
+    label:
+      en_US: Preset Name
+      zh_Hans: 预设名称
+    human_description:
+      en_US: Optional. Override the skill name shown in the main node preset list.
+      zh_Hans: 可选。覆盖主节点预设列表中显示的 Skill 名称。
+    required: false
+    form: form
+
+  - name: skill_description
+    type: string
+    label:
+      en_US: Preset Description
+      zh_Hans: 预设描述
+    human_description:
+      en_US: Optional. Override the skill description shown in the main node preset list.
+      zh_Hans: 可选。覆盖主节点预设列表中显示的 Skill 描述。
+    required: false
+    form: form
+
+extra:
+  python:
+    source: tools/register_skill_package/register_skill_package.py
